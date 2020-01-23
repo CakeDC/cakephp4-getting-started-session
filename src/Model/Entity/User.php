@@ -40,4 +40,13 @@ class User extends Entity
         'logs' => true,
         'mailing_lists' => true,
     ];
+
+    protected function _getDisplayName() : string
+    {
+        return \Cake\Utility\Text::insert(":firstName :lastName (:email)", [
+            'firstName' => $this->first_name,
+            'lastName' => $this->get('last_name'),
+            'email' => $this['email'],
+        ]);
+    }
 }
