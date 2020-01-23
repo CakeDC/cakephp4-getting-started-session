@@ -28,10 +28,13 @@ use Cake\Validation\Validator;
  */
 class CampaignsTable extends Table
 {
+    const STATUS_NEW = 'new';
+    const STATUS_IN_PROGRESS = 'in-progress';
+    const STATUS_COMPLETED = 'completed';
     const STATUSES = [
-        'new',
-        'in-progress',
-        'completed',
+        self::STATUS_NEW,
+        self::STATUS_IN_PROGRESS,
+        self::STATUS_COMPLETED,
     ];
 
     /**

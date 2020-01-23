@@ -111,7 +111,7 @@ class CampaignsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function queryExample() : ?\Cake\Http\Response
+    public function queryExample()
     {
         $query = $this->Campaigns->find()
             ->select(['Campaigns.name', 'Campaigns.status'])
@@ -121,11 +121,20 @@ class CampaignsController extends AppController
         dd($query->toArray());
     }
 
-    public function queryContainExample() : ?\Cake\Http\Response
+    public function queryContainExample()
     {
         $query = $this->Campaigns->find()
             ->contain('MailingLists.Users')
             ->where(['Campaigns.status' => 'completed']);
         dd($query->toArray());
+    }
+
+    public function dashboard()
+    {
+        $campaigns = $this->Campaigns->find()
+            ->where([
+                'Campaigns.status' => \App\Model\Table\CampaignsTable::STATUS_NEW,
+                ]);
+        $this->set(compact('campaigns'));
     }
 }
