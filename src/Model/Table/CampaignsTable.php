@@ -44,10 +44,9 @@ class CampaignsTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->belongsTo('Templates', [
-            'foreignKey' => 'template_id',
-            'joinType' => 'INNER',
-        ]);
+        $this->belongsTo('Templates')
+            ->setForeignKey('template_id')
+            ->setConditions(['Templates.active' => true]);
         $this->hasMany('Logs', [
             'foreignKey' => 'campaign_id',
         ]);
