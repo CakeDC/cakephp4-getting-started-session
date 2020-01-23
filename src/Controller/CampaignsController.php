@@ -110,4 +110,14 @@ class CampaignsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function queryExample() : ?\Cake\Http\Response
+    {
+        $query = $this->Campaigns->find()
+            ->select(['Campaigns.name', 'Campaigns.status'])
+            ->where(['Campaigns.status !=' => 'new'])
+            ->order(['Campaigns.name' => 'asc'])
+            ->limit(10);
+        dd($query->toArray());
+    }
 }
