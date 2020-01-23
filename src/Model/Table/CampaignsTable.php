@@ -28,6 +28,12 @@ use Cake\Validation\Validator;
  */
 class CampaignsTable extends Table
 {
+    const STATUSES = [
+        'new',
+        'in-progress',
+        'completed',
+    ];
+
     /**
      * Initialize method
      *
@@ -80,6 +86,12 @@ class CampaignsTable extends Table
             ->maxLength('status', 255)
             ->requirePresence('status', 'create')
             ->notEmptyString('status');
+
+        $invalidMsg = __('Invalid status, please use {0}',
+            \Cake\Utility\Text::toList(static::STATUSES, __('or'))
+        );
+        $validator
+            ->inList('status', static::STATUSES, $invalidMsg);
 
         return $validator;
     }
