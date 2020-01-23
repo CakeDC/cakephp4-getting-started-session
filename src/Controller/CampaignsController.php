@@ -120,4 +120,12 @@ class CampaignsController extends AppController
             ->limit(10);
         dd($query->toArray());
     }
+
+    public function queryContainExample() : ?\Cake\Http\Response
+    {
+        $query = $this->Campaigns->find()
+            ->contain('MailingLists.Users')
+            ->where(['Campaigns.status' => 'completed']);
+        dd($query->toArray());
+    }
 }
