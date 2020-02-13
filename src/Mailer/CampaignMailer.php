@@ -17,12 +17,12 @@ class CampaignMailer extends Mailer
      */
     public static $name = 'Campaign';
 
-    public function merge($user, $subjectTemplate, $bodyTemplate) : void
+    public function merge($user, $subjectTemplate, $bodyTemplate): void
     {
         $variables = \Cake\Utility\Hash::flatten(['user' => $user->toArray()]);
         $options = [
             'before' => '{{',
-            'after' => '}}'
+            'after' => '}}',
         ];
         $subject = \Cake\Utility\Text::insert($subjectTemplate, $variables, $options);
         $this
