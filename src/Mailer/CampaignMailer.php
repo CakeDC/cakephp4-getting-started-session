@@ -25,6 +25,7 @@ class CampaignMailer extends Mailer
             'after' => '}}',
         ];
         $subject = \Cake\Utility\Text::insert($subjectTemplate, $variables, $options);
+        //$this->setLogConfig(true);
         $this
             ->setTo($user['email'])
             ->setEmailFormat('both')

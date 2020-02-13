@@ -213,3 +213,8 @@ ServerRequest::addDetector('tablet', function ($request) {
 //Inflector::rules('irregular', ['red' => 'redlings']);
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
+
+function t(string $table): \Cake\Orm\Table
+{
+    return \Cake\ORM\TableRegistry::getTableLocator()->get($table);
+}
