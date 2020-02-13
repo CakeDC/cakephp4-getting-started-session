@@ -95,7 +95,8 @@ class CampaignsTable extends Table
             ->requirePresence('status', 'create')
             ->notEmptyString('status');
 
-        $invalidMsg = __('Invalid status, please use {0}',
+        $invalidMsg = __(
+            'Invalid status, please use {0}',
             \Cake\Utility\Text::toList(static::STATUSES, __('or'))
         );
         $validator
@@ -121,7 +122,7 @@ class CampaignsTable extends Table
     public function send($id): bool
     {
         $campaign = $this->get($id, [
-            'contain' => ['Templates', 'MailingLists.Users']
+            'contain' => ['Templates', 'MailingLists.Users'],
         ]);
         // NOTE: this query should be improved, left as a simple example
         foreach ($campaign->mailing_lists as $mailing_list) {
@@ -129,6 +130,7 @@ class CampaignsTable extends Table
                 $this->emailMerge($campaign, $user);
             }
         }
+
         return true;
     }
 
