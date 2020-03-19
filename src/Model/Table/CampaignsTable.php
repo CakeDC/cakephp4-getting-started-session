@@ -5,6 +5,8 @@ namespace App\Model\Table;
 
 use App\Model\Entity\Campaign;
 use App\Model\Entity\User;
+use Cake\Event\Event;
+use Cake\Log\Log;
 use Cake\Mailer\MailerAwareTrait;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
@@ -150,5 +152,14 @@ class CampaignsTable extends Table
         $subjectTemplate = $campaign->template['subject'];
         $bodyTemplate = $campaign->template['body'];
         debug($this->getMailer('Campaign')->send('merge', [$user, $subjectTemplate, $bodyTemplate]));
+    }
+
+    public function afterSave(Event $event, Campaign $campaign, $options)
+    {
+        if (!$campaign->isDirty('status')) {
+            return true;
+        }
+        $message = sprintf('Campaign %s status changed to "%s"', $campaign['name'], $campaign['status']);
+        Log::info($message);
     }
 }
