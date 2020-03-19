@@ -134,7 +134,19 @@ class CampaignsController extends AppController
         $campaigns = $this->Campaigns->find()
             ->where([
                 'Campaigns.status' => \App\Model\Table\CampaignsTable::STATUS_NEW,
-                ]);
+            ]);
         $this->set(compact('campaigns'));
+    }
+
+    public function send($id = null)
+    {
+        $this->request->allowMethod('post');
+        if (!$this->Campaigns->send($id)) {
+            $this->Flash->error(__('Send campaign failed'));
+        } else {
+            $this->Flash->success(__('Send campaign success!'));
+        }
+
+        return $this->redirect(['action' => 'dashboard']);
     }
 }
