@@ -61,16 +61,16 @@
         },
         {
             "name": "cakephp/cakephp",
-            "version": "4.0.6",
+            "version": "4.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/cakephp.git",
-                "reference": "776a053fd360ac9c030730027bf37c7b7f69fba8"
+                "reference": "5c6d72bc9bb1be6eec1b00b3930f9e5054ee6d76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/776a053fd360ac9c030730027bf37c7b7f69fba8",
-                "reference": "776a053fd360ac9c030730027bf37c7b7f69fba8",
+                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/5c6d72bc9bb1be6eec1b00b3930f9e5054ee6d76",
+                "reference": "5c6d72bc9bb1be6eec1b00b3930f9e5054ee6d76",
                 "shasum": ""
             },
             "require": {
@@ -159,20 +159,20 @@
                 "issues": "https://github.com/cakephp/cakephp/issues",
                 "source": "https://github.com/cakephp/cakephp"
             },
-            "time": "2020-04-19T01:11:57+00:00"
+            "time": "2020-12-08T03:04:12+00:00"
         },
         {
             "name": "cakephp/chronos",
-            "version": "2.3.0",
+            "version": "2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/chronos.git",
-                "reference": "3ecd6e7ae191c676570cd1bed51fd561de4606dd"
+                "reference": "a21b7b633f483c4cf525d200219d200f551ee38b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/chronos/zipball/3ecd6e7ae191c676570cd1bed51fd561de4606dd",
-                "reference": "3ecd6e7ae191c676570cd1bed51fd561de4606dd",
+                "url": "https://api.github.com/repos/cakephp/chronos/zipball/a21b7b633f483c4cf525d200219d200f551ee38b",
+                "reference": "a21b7b633f483c4cf525d200219d200f551ee38b",
                 "shasum": ""
             },
             "require": {
@@ -203,22 +203,21 @@
                 },
                 {
                     "name": "The CakePHP Team",
-                    "homepage": "http://cakephp.org"
+                    "homepage": "https://cakephp.org"
                 }
             ],
             "description": "A simple API extension for DateTime.",
-            "homepage": "http://cakephp.org",
+            "homepage": "https://cakephp.org",
             "keywords": [
                 "date",
                 "datetime",
                 "time"
             ],
             "support": {
-                "irc": "irc://irc.freenode.org/cakephp",
                 "issues": "https://github.com/cakephp/chronos/issues",
                 "source": "https://github.com/cakephp/chronos"
             },
-            "time": "2021-10-17T02:44:05+00:00"
+            "time": "2022-11-08T02:17:04+00:00"
         },
         {
             "name": "cakephp/migrations",
@@ -316,16 +315,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.3.1",
+            "version": "1.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "4c679186f2aca4ab6a0f1b0b9cf9252decb44d0b"
+                "reference": "74780ccf8c19d6acb8d65c5f39cd72110e132bbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/4c679186f2aca4ab6a0f1b0b9cf9252decb44d0b",
-                "reference": "4c679186f2aca4ab6a0f1b0b9cf9252decb44d0b",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/74780ccf8c19d6acb8d65c5f39cd72110e132bbd",
+                "reference": "74780ccf8c19d6acb8d65c5f39cd72110e132bbd",
                 "shasum": ""
             },
             "require": {
@@ -372,7 +371,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.3.1"
+                "source": "https://github.com/composer/ca-bundle/tree/1.3.5"
             },
             "funding": [
                 {
@@ -388,7 +387,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-10-28T20:44:15+00:00"
+            "time": "2023-01-11T08:27:00+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",
@@ -4705,5 +4704,5 @@
         "php": ">=7.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
